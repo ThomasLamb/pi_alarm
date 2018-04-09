@@ -5,20 +5,22 @@ from flask import Flask, render_template
 app = Flask(__name__, static_folder='static')
 
 
-@app.route("/")
+@app.route('/')
 @app.route('/index')
 @app.route('/home')
 def index():
 	now = datetime.datetime.now()
-	timeString = now.strftime("%Y-%m-%d %H:%M")
+	currentTimeString = now.strftime("%Y-%m-%d %H:%M")
 	tomorrow = datetime.date.today() + datetime.timedelta(days=1)
 	tomorrowDayName = tomorrow.strftime("%A")
+	tomorrowAlarmTimeString = '06:45:00'
 
 	templateData = {
 		'application': 'Pi Alarm Clock',
 		'title': 'Main',
-		'time': timeString,
-		'day': tomorrowDayName
+		'currentTime': currentTimeString,
+		'alarmDay': tomorrowDayName,
+		'alarmTime': tomorrowAlarmTimeString
 	}
 	return render_template('main.html', **templateData)
 

@@ -66,16 +66,15 @@
 			<h1>{{ application }}</h1>
 			<p class="lead">
 				The date and time on the server is:
-				<br /> {{ time }}
+				<br /> {{ currentTime }}
 			</p>
 			<form action="/set_alarm" , method="POST">
 				<div class="form-group">
-					Set an alarm for tomorrow ({{ day }}):
+					<label for="time">Set an alarm for tomorrow ({{ alarmDay }}):</label>
+					<input name="time" type="time" class="form-control" value="{{ alarmTime }}" />
 				</div>
 				<div class="form-group">
-					<label for="time">Time</label>
-					<input name="time" type="time" value="${time}" />
-					<input type="submit" class="btn btn-primary btn-lg" />
+					<input type="submit" class="btn btn-primary" />
 				</div>
 			</form>
 		</div>
