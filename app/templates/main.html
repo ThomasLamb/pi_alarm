@@ -15,11 +15,6 @@
 		body {
 			padding-top: 5rem;
 		}
-
-		.starter-template {
-			padding: 3rem 1.5rem;
-			text-align: center;
-		}
 	</style>
 </head>
 
@@ -61,25 +56,25 @@
 
 
 	<main role="main" class="container">
+		<h1>{{ application }}</h1>
 
-		<div class="starter-template">
-			<h1>{{ application }}</h1>
-			<p class="lead">
-				The date and time on the server is:
-				<br /> {{ currentTime }}
-			</p>
-			<form action="/set_alarm" , method="POST">
-				<div class="form-group">
-					<label for="time">Set an alarm for tomorrow ({{ alarmDay }}):</label>
-					<input name="time" type="time" class="form-control" value="{{ alarmTime }}" />
-				</div>
-				<div class="form-group">
-					<input type="submit" class="btn btn-primary" />
-				</div>
-			</form>
-		</div>
-
+		<form action="/set_alarm" , method="POST">
+			<div class="form-group">
+				<label for="time">Set an alarm for tomorrow ({{ alarmDay }}):</label>
+				<input name="time" type="time" class="form-control" value="{{ alarmTime }}" />
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary" />
+			</div>
+		</form>
 	</main>
+
+	<footer>
+		<small>
+			The date and time on the server is:
+			<br /> {{ currentTime }}
+		</small>
+	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	 crossorigin="anonymous"></script>
