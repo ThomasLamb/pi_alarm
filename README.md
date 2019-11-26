@@ -63,7 +63,7 @@ live, and create a virtual environment:
 ```
 sudo su -
 cd /opt
-virtuanenv pi_alarm_env
+virtualenv pi_alarm_env
 cd pi_alarm_env
 ```
 Next, check out the project from git, and install the python libraries:
