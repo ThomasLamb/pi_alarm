@@ -33,6 +33,7 @@ def render(templatename, **kwargs):
 current_day = datetime.date.today() + datetime.timedelta(days=1)
 
 light_driver = LightDriver()
+audio_driver = AudioDriver()
 scheduler = Scheduler()
 
 # -- Routes
