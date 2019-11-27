@@ -5,7 +5,7 @@ from app import app
 try:
     from RPi import GPIO
 except:
-    print "Failed to import GPIO driver! Is this running on a Raspberry Pi?"
+    print("Failed to import GPIO driver! Is this running on a Raspberry Pi?")
 
 class LightDriver(object):
     """
@@ -26,15 +26,15 @@ class LightDriver(object):
             self.pin = pin
             return True
         except Exception as exc:
-            print "Failed to set pin: %s" % exc
+            print("Failed to set pin: %s" % exc)
             return False
 
     def on(self):
-        print "Turning light on"
+        print("Turning light on")
         self._control_signal(self.pin, True)
 
     def off(self):
-        print "Turning light off"
+        print("Turning light off")
         self._control_signal(self.pin, False)
 
     def _control_signal(self, pin, signal):
@@ -53,5 +53,5 @@ class LightDriver(object):
             return signal
 
         except Exception as exc:
-            print "Failed to control GPIO Pins: %s" % exc
+            print("Failed to control GPIO Pins: %s" % exc)
             return not signal

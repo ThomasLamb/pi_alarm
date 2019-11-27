@@ -5,6 +5,7 @@ import random
 
 from app import app
 from flask import flash, redirect, get_flashed_messages, request
+from audio_driver import AudioDriver
 from light_driver import LightDriver
 from mako.lookup import TemplateLookup
 from scheduler import Scheduler
@@ -178,6 +179,17 @@ def turn_light_on():
 def turn_light_off():
     light_driver.off()
     return redirect(('/' + get_current_day_name()).lower())
+
+# -- Audio Control Routes
+@app.route('/audio_on')
+def turn_audio_on():
+	audio_driver.on()
+	return redirect(('/' + get_current_day_name()).lower())
+
+@app.route('/audio_off')
+def turn_audio_off():
+	audio_driver.off()
+	return redirect(('/' + get_current_day_name()).lower())
 
 @app.route('/troll')
 def troll_katie():

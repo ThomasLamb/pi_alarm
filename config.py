@@ -3,6 +3,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 # -- Alarm Settings
 PIN = 10                       # Pin to which the PowerSwitch Tail is connected
+AUDIOFILE = '/home/pi/hl2-wakeup.mp3'  # Audio file to play
 ALARM_DURATION = 15            # Light duration in minutes
 
 # -- General Config
